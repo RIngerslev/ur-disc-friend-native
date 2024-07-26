@@ -1,31 +1,36 @@
-name: Expo Build
+name: Expo Build!
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '18'
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18"
 
-    - name: Install dependencies
-      run: yarn install
+      - name: Install dependencies
+        run: yarn install
 
-    - name: Install Expo CLI
-      run: npm install -g expo-cli
+      - name: Install EAS CLI
+        run: npm install -g eas-cli
 
-    - name: Build Expo project
-      run: expo build:android --no-publish
-      env:
-        EXPO_NO_ANALYTICS: true
+      - name: Configure EAS CLI
+        run: |
+          echo $EAS_TOKEN > ~/.eas.json
+          eas whoami
+
+      - name: Build Expo project
+        run: eas build --platform all --profile production
+        env:
+          EAS_TOKEN: ${{ secrets.EXPO_TOKEN }}
