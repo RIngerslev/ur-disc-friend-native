@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18.x
+          node-version: 18
           cache: yarn
 
       - name: Setup EAS
@@ -33,3 +33,4 @@ jobs:
 
       - name: Publish update
         run: eas update --auto
+
