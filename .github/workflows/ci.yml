@@ -33,4 +33,4 @@ jobs:
       - name: Build Expo project
         run: eas build --platform all --profile production
         env:
-          EAS_TOKEN: ${{ secrets.EAS_TOKEN }}
+          EAS_TOKEN: ${{ secrets.EXPO_TOKEN }}
