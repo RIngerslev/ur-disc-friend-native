@@ -1,13 +1,12 @@
 {
   "build": {
     "production": {
-      "releaseChannel": "production",
-      "distribution": "store",
+      "workflow": "managed",
       "android": {
         "buildType": "apk"
       },
       "ios": {
-        "simulator": true
+        "buildType": "archive"
       }
     }
   }
