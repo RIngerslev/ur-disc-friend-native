@@ -1,34 +1,57 @@
-name: Expo Build
+name: React Native CI
 
 on:
   push:
-    branches: [master]
+    branches:
+      - master
   pull_request:
-    branches: [master]
+    branches:
+      - master
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
 
+    env:
+      CI: true
+
+    services:
+      docker:
+        image: circleci/android:api-30
+        options: --privileged
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "18"
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+        cache: 'yarn'
 
-      - name: Install dependencies
-        run: yarn install
+    - name: Install yarn
+      run: npm install -g yarn
 
-      - name: Install Expo CLI
-        run: npm install -g eas-cli
+    - name: Install dependencies
+      run: yarn install
 
-      - name: Authenticate with EAS
-        env:
-          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-        run: eas login --token ${{ secrets.EXPO_TOKEN }}
+    - name: Run tests
+      run: yarn test
 
-      - name: Build Expo project
-        run: eas build --platform all --profile production
+    - name: Install Java JDK
+      uses: actions/setup-java@v1
+      with:
+        java-version: '11'
+
+    - name: Install Android SDK
+      uses: reactivecircus/android-emulator-runner@v2
+      with:
+        api-level: 30
+        target: default
+        arch: x86_64
+        profile: Nexus 6
+        script: |
+          cd android
+          ./gradlew assembleDebug
