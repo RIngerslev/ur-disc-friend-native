@@ -19,8 +19,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
-          cache: yarn
+          node-version: 18.x
 
       - name: Setup EAS
         uses: expo/expo-github-action@v8
@@ -33,4 +32,3 @@ jobs:
 
       - name: Publish update
         run: eas update --auto
-
