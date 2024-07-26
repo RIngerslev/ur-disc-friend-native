@@ -17,7 +17,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "18"
+          node-version: '18'
 
       - name: Install dependencies
         run: yarn install
@@ -25,8 +25,18 @@ jobs:
       - name: Install Expo CLI
         run: npm install -g expo-cli
 
+      - name: Install EAS CLI
+        run: npm install -g eas-cli
+
       - name: Login to Expo
         run: expo login --non-interactive -u ${{ secrets.EXPO_USERNAME }} -p ${{ secrets.EXPO_PASSWORD }}
 
+      - name: Login to EAS
+        run: eas whoami
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+
       - name: Build Expo project
         run: eas build --platform all --profile production
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
