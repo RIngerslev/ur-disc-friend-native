@@ -5,9 +5,8 @@
   "version": "1.0.0",
   "scripts": {
     "start": "expo start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "build": "expo build",
+    "build:web": "expo build:web",
+    "export:web": "expo export --public-url https://ringerslev.github.io/ur-disc-friend-native/",
     "reset-project": "node ./scripts/reset-project.js",
     "android": "expo start --android",
     "ios": "expo start --ios",
