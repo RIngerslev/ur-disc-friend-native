@@ -1,10 +1,15 @@
-name: update
-on: push
+name: EAS Update
+
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   update:
     name: EAS Update
     runs-on: ubuntu-latest
+
     steps:
       - name: Check for EXPO_TOKEN
         run: |
@@ -21,14 +26,19 @@ jobs:
         with:
           node-version: 18.x
 
-      - name: Setup EAS
-        uses: expo/expo-github-action@v8
-        with:
-          eas-version: latest
-          token: ${{ secrets.EXPO_TOKEN }}
-
       - name: Install dependencies
         run: yarn install
 
+      - name: Install EAS CLI
+        run: npm install -g eas-cli
+
+      - name: Configure EAS
+        run: eas build:configure
+        env:
+          EAS_TOKEN: ${{ secrets.EXPO_TOKEN }}
+
       - name: Publish update
         run: eas update --auto
+        env:
+          EAS_TOKEN: ${{ secrets.EXPO_TOKEN }}
+
