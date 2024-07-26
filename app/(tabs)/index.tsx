@@ -73,7 +73,7 @@ export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.textStyle}>Ur Disc Friend!</Text>
-      <Text>By Rasmus Ingerslev</Text>
+      <Text>By Rasmus Ingerslev!</Text>
       
       <Animated.View style={[{transform: [{translateX:fadeAnim2.x},{translateY:fadeAnim2.y}], opacity: fadeAnim}]}>
         <Text style={styles.textStyle1}>{name}</Text>
