@@ -25,7 +25,7 @@
       "favicon": "./assets/images/favicon.png",
       "bundler": "metro",
       "output": "static",
-      "publicPath": "/ur-disc-friend-native/",
+      "publicPath": "/ur-disc-friend-native",
       "build": {
         "babel": {
           "include": ["expo-router"]
