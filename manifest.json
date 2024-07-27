@@ -1,7 +1,7 @@
 {
     "name": "Ur Disc Friend",
     "short_name": "Ur Disc Friend",
-    "description": "",
+    "description": "hello",
     "start_url": "/",
     "display": "standalone",
     "orientation": "portrait",
