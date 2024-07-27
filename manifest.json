@@ -1,6 +1,6 @@
 {
-  "name": "Ur Disc Friend",
   "short_name": "Ur Disc Friend",
+  "name": "Ur Disc Friend",
   "description": "hello",
   "start_url": "/",
   "display": "standalone",
