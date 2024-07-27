@@ -25,16 +25,13 @@
       "favicon": "./assets/images/favicon.png",
       "build": {
         "babel": {
-          "include": [
-            "expo-router"
-          ]
+          "include": ["expo-router"]
         }
       }
     },
-    "plugins": [
-      "expo-router"
-    ],
+    "plugins": ["expo-router"],
     "experiments": {
+      "baseUrl": "/ur-disc-friend-native",
       "typedRoutes": true
     },
     "extra": {
