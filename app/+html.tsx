@@ -22,9 +22,8 @@ export default function Root({ children }: PropsWithChildren) {
         <style dangerouslySetInnerHTML={{ __html: responsiveBackground }} />
         {/* Add any additional <head> elements that you want globally available on web... */}
 
-        <link rel="manifest" href="/manifest.json" />
+        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
         <meta name="keywords" content="grauballe, mikrobryggeri, øl, bryghus, bryggeri, grauballe mikrobryggeri" />
-
       </head>
       <body>{children}</body>
     </html>
