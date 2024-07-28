@@ -2,6 +2,7 @@
   "short_name": "Ur Disc Friend",
   "name": "Ur Disc Friend",
   "description": "hello",
+  "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#cc6900",
