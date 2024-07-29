@@ -1,10 +1,11 @@
 {
-  "homepage": "https://ringerslev.github.io/ur-disc-friend-native",
+  "homepage": "https://ringerslev.github.io/ur-disc-friend-native/",
   "name": "ur-disc-friend-native",
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
     "start": "expo start",
+    "start app": "npx expo start --tunnel",
     "deploy": "gh-pages -t -d dist",
     "predeploy": "expo export -p web",
     "reset-project": "node ./scripts/reset-project.js",
