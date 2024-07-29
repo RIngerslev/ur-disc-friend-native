@@ -3,14 +3,15 @@ import React from 'react'
 import { FontAwesome6, MaterialCommunityIcons } from '@expo/vector-icons'
 
 const TabBar = ({ state, descriptors, navigation }) => {
+    const primaryColor = '#FE5F55'
+    const secondColor = '#EEF5DB'
+    
     const icons = {
         index: (props: any) => <FontAwesome6 name="hand-point-down" size={24} color={secondColor} {...props} />,
         dice: (props: any) => <MaterialCommunityIcons name="dice-multiple" size={24} color={secondColor} {...props} />,
         flip: (props: any) => <MaterialCommunityIcons name="hand-coin" size={24} color={secondColor} {...props} />,
     }
 
-    const primaryColor = '#FE5F55'
-    const secondColor = '#EEF5DB'
 
   return (
     <View style={styles.tabbarContainer}>
