@@ -58,7 +58,7 @@ export default function TabTwoScreen() {
       <TouchableOpacity
 				onPress={clickMe}>
 				<View style={styles.buttonContainer}>
-				<Text style={styles.buttonText}> Roll </Text>
+				<Text style={styles.buttonText}> Flip </Text>
         </View>
 			</TouchableOpacity>
     </View>
