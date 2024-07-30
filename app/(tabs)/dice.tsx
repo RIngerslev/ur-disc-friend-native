@@ -73,7 +73,7 @@ export default function TabTreeScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.textStyle}>Ur Disc Friend!</Text>
-      <Text>By Rasmus Ingerslev</Text>
+      <Text style={styles.simpel}>By Rasmus Ingerslev</Text>
       
       <Animated.View style={[{transform: [{translateX:fadeAnim2.x},{translateY:fadeAnim2.y}], opacity: fadeAnim}]}>
         <Text style={styles.textStyle1}>{name}</Text>
@@ -99,7 +99,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-
   textStyle: {
     fontSize: 20,
     color: "#EEF5DB",
@@ -109,8 +108,8 @@ const styles = StyleSheet.create({
     margin: 20,
     borderRadius: 10,
     overflow: 'hidden',
+    userSelect: 'none'
   },
-
   shadowOffSet: {
     borderRadius: 10,
     shadowColor: 'black',
@@ -122,7 +121,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     elevation: 2,
   },
-
   textStyle1: {
     margin: 30,
     height: 80,
@@ -140,15 +138,14 @@ const styles = StyleSheet.create({
       height: 5,
     },
     shadowOpacity: 0.3,
+    userSelect: 'none'
   },
-
   Button:{
     fontSize: 30,
     fontWeight: "bold",
     margin: 100,
     backgroundColor: '#7A9E9F',
   },
-
 	buttonContainer: {
 		marginVertical: 10,
 		height: 60,
@@ -164,12 +161,10 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.3,    
 	},
-
 	buttonText: {
 		color: '#fff',
 		fontSize: 40,
 	},
-
   buttonInfo: {
 		marginVertical: 20,
 		height: 35,
@@ -179,12 +174,10 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
     borderRadius: 10,  
 	},
-
 	buttonTextInfo: {
 		color: '#EEF5DB',
 		fontSize: 20,
 	},
-
   buttonFlip: {
 		marginVertical: 20,
 		height: 35,
@@ -194,9 +187,12 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
     borderRadius: 10,
 	},
-
 	buttonTextFlip: {
 		color: '#EEF5DB',
 		fontSize: 20,
-  }
+  },
+  simpel: {
+    color: 'black',
+    userSelect: 'none',
+  },
 });

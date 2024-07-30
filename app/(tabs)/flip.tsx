@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
     margin: 20,
     borderRadius: 10,
     overflow: 'hidden',
+    userSelect: 'none',
   },
 
   textStyle1: {
@@ -99,14 +100,14 @@ const styles = StyleSheet.create({
 
   imageStyle: {
     margin: 15,
-    backgroundColor: 'transparent'
+    backgroundColor: 'transparent',
   },
 
   imageStyle2: {
     borderRadius: 6,
     resizeMode: 'contain',
     height: 250, 
-    width: 250
+    width: 250,
   },
 
   Button:{
@@ -153,6 +154,7 @@ const styles = StyleSheet.create({
 	},
 
   simpel: {
-    color: 'black'
+    color: 'black',
+    userSelect: 'none',
   },
 });
