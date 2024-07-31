@@ -5,7 +5,7 @@ const Circle = React.memo(({ point, highlighted }) => (
   <View
     style={[
       styles.circle,
-      { left: point.x - 65, top: point.y - 65 }, // Adjust the position to center the circle
+      { left: point.x - 65, top: point.y - 65 },
       highlighted && styles.highlightedCircle,
     ]}
   />
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: 130,
     height: 130,
-    borderRadius: 65, // Half of the width and height to make it a circle
+    borderRadius: 65,
     backgroundColor: '#4f6367',
     userSelect: 'none',
   },
