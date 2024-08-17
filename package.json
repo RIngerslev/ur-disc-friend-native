@@ -10,6 +10,8 @@
     "predeploy": "expo export -p web",
     "reset-project": "node ./scripts/reset-project.js",
     "android": "expo start --android",
+    "build google app": "eas build --platform android",
+    "build google app profile": "eas build --platform android --profile production",
     "ios": "expo start --ios",
     "web": "expo start --web",
     "test": "jest --watchAll",

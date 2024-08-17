@@ -2,7 +2,7 @@
   "expo": {
     "name": "ur-disc-friend-native",
     "slug": "ur-disc-friend-native",
-    "version": "1.0.0",
+    "version": "1.0.6",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -16,7 +16,8 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "com.urdiscfriendnative.app",
+      "package": "com.UrDiscFriend",
+      "versionCode": 6,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -51,6 +52,7 @@
     },
     "updates": {
       "url": "https://u.expo.dev/a9ae890f-93b5-4429-b296-d16b1fe1dcad"
-    }
+    },
+    "owner": "ralle7100"
   }
 }
